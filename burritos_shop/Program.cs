@@ -2,12 +2,6 @@
 
 class Program
 {
-
-    /* Go to Tools > Options.
-     * In the search bar at the top left of the window, type IntelliCode.
-     * Find C# user model predictions (or "Whole line completions") and set it to Disabled.
-     * */
-
     static void Main()
     {
         bool running = true;
@@ -54,41 +48,40 @@ class Program
 
     static void using_for_loop()
     {
-
-        /* A food truck sells burritos for $9 each.
-         * Minimum cost per month is $1200 .
-         * The unit cost per burrito is $3.80.
-         * 
-         * Write a program that:
-         * 
-         * Starts from 0 burritos sold.
-         * Keeps increasing the number of burritos sold by 1 each time.
-         * Calculates revenue, cost, and profit (revenue - cost).
-         * Stops and reports the first number of burritos where the truck makes profit (revenue > cost).
-         * 
-         * Expected output:
-         * ...
-         * After selling 229 burritos: profit -9.20.
-         * After selling 230 burritos: profit -4.00
-         * ------------------------------------
-         * Success! Profit reached.
-         * Number of Burritos: 231 
-         * Revenue: $2,079.00 
-         * Cost: $2,077.80 
-         * Profit: $1.20
-         * 
-        */
-
-
         Console.WriteLine("Calculating the break-even point using for loop ... ");
         Console.WriteLine("------------------------------------");
 
-        // Please Enter Your For Loop Codes Here
+        decimal unitprice = 9.00m;
+        decimal fixedcost = 1200.00m;
+        decimal variablecost = 3.80m;
 
-        
+        int itemsold = 0;
+        decimal totalcost = 0.00m;
+        decimal totalrevenue = 0.00m;
+        decimal profit = 0.00m;
 
+        for (itemsold = 0; ; itemsold++)
+        {
+            totalcost = fixedcost + (variablecost * itemsold);
+            totalrevenue = unitprice * itemsold;
+            profit = totalrevenue - totalcost;
 
+            if (profit <= 0)
+            {
+                Console.WriteLine($"After selling {itemsold} burritos: the profit equals ${profit:F2}.");
+            }
+            else
+            {
+                break;
+            }
+        }
 
+        Console.WriteLine("------------------------");
+        Console.WriteLine($"Success. You've turned a profit!");
+        Console.WriteLine($"Number of Burritos Sold: {itemsold}");
+        Console.WriteLine($"Total Revenue: ${totalrevenue:F2}");
+        Console.WriteLine($"Total Cost: ${totalcost:F2}");
+        Console.WriteLine($"The profit is ${profit:F2}.");
 
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
