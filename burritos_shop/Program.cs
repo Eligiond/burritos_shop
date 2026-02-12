@@ -96,9 +96,38 @@ class Program
 
         // Please Enter Your While Loop Codes Here
 
+        decimal unitprice = 9.00m;
+        decimal fixedcost = 1200.00m;
+        decimal variablecost = 3.80m;
+
+        int itemsold = 0;
+        decimal totalcost = 0.00m;
+        decimal totalrevenue = 0.00m;
+        decimal profit = 0.00m;
         
+        while (profit <= 0)
+        {
+            totalcost = fixedcost + (variablecost * itemsold);
+            totalrevenue = unitprice * itemsold;
+            profit = totalrevenue - totalcost;
 
+            if (profit <= 0)
+            {
+                Console.WriteLine($"After selling {itemsold} burritos: the profit equals ${profit:F2}.");
+            }
+            else
+            {
+                break;
+            }
+            itemsold++;
+        }
 
+        Console.WriteLine("------------------------");
+        Console.WriteLine($"Success. You've turned a profit!");
+        Console.WriteLine($"Number of Burritos Sold: {itemsold}");
+        Console.WriteLine($"Total Revenue: ${totalrevenue:F2}");
+        Console.WriteLine($"Total Cost: ${totalcost:F2}");
+        Console.WriteLine($"The profit is ${profit:F2}.");
 
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
@@ -114,11 +143,31 @@ class Program
 
         // Please Enter Your Do-While Loop Codes Here
 
-        
+        decimal unitprice = 9.00m;
+        decimal fixedcost = 1200.00m;
+        decimal variablecost = 3.80m;
 
+        int itemsold = 0;
+        decimal totalcost = 0.00m;
+        decimal totalrevenue = 0.00m;
+        decimal profit = 0.00m;
 
+        do
+        {
+            totalcost = fixedcost + (variablecost * itemsold);
+            totalrevenue = unitprice * itemsold;
+            profit = totalrevenue - totalcost;
 
-
+            if (profit <= 0)
+            {
+                Console.WriteLine($"After selling {itemsold} burritos: the profit equals ${profit:F2}.");
+            }
+            else
+            {
+                break;
+            }
+            itemsold++;
+        } while (profit <= 0);
 
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
