@@ -17,7 +17,7 @@ class Program
             Console.WriteLine("4) Exit");
             Console.Write("\nSelect an option: ");
 
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
 
             if (input == "1")
             {
@@ -107,27 +107,20 @@ class Program
         
         while (profit <= 0)
         {
+            Console.WriteLine($"After selling {itemsold} burritos: profit equals ${profit:F2}.");
+
             totalcost = fixedcost + (variablecost * itemsold);
             totalrevenue = unitprice * itemsold;
             profit = totalrevenue - totalcost;
-
-            if (profit <= 0)
-            {
-                Console.WriteLine($"After selling {itemsold} burritos: the profit equals ${profit:F2}.");
-            }
-            else
-            {
-                break;
-            }
             itemsold++;
         }
 
         Console.WriteLine("------------------------");
         Console.WriteLine($"Success. You've turned a profit!");
         Console.WriteLine($"Number of Burritos Sold: {itemsold}");
-        Console.WriteLine($"Total Revenue: ${totalrevenue:F2}");
-        Console.WriteLine($"Total Cost: ${totalcost:F2}");
-        Console.WriteLine($"The profit is ${profit:F2}.");
+        Console.WriteLine($"Total Revenue: ${totalrevenue:C2}");
+        Console.WriteLine($"Total Cost: ${totalcost:C2}");
+        Console.WriteLine($"The profit is ${profit:C2}.");
 
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
@@ -161,13 +154,21 @@ class Program
             if (profit <= 0)
             {
                 Console.WriteLine($"After selling {itemsold} burritos: the profit equals ${profit:F2}.");
+                itemsold++;
             }
             else
             {
                 break;
             }
-            itemsold++;
+            
         } while (profit <= 0);
+
+        Console.WriteLine("------------------------");
+        Console.WriteLine($"Success. You've turned a profit!");
+        Console.WriteLine($"Number of Burritos Sold: {itemsold}");
+        Console.WriteLine($"Total Revenue: ${totalrevenue:C2}");
+        Console.WriteLine($"Total Cost: ${totalcost:C2}");
+        Console.WriteLine($"The profit is ${profit:C2}.");
 
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
