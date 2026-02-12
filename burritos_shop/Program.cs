@@ -118,9 +118,9 @@ class Program
         Console.WriteLine("------------------------");
         Console.WriteLine($"Success. You've turned a profit!");
         Console.WriteLine($"Number of Burritos Sold: {itemsold}");
-        Console.WriteLine($"Total Revenue: ${totalrevenue:C2}");
-        Console.WriteLine($"Total Cost: ${totalcost:C2}");
-        Console.WriteLine($"The profit is ${profit:C2}.");
+        Console.WriteLine($"Total Revenue: {totalrevenue:C2}");
+        Console.WriteLine($"Total Cost: {totalcost:C2}");
+        Console.WriteLine($"The profit is {profit:C2}.");
 
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
@@ -166,9 +166,9 @@ class Program
         Console.WriteLine("------------------------");
         Console.WriteLine($"Success. You've turned a profit!");
         Console.WriteLine($"Number of Burritos Sold: {itemsold}");
-        Console.WriteLine($"Total Revenue: ${totalrevenue:C2}");
-        Console.WriteLine($"Total Cost: ${totalcost:C2}");
-        Console.WriteLine($"The profit is ${profit:C2}.");
+        Console.WriteLine($"Total Revenue: {totalrevenue:C2}");
+        Console.WriteLine($"Total Cost: {totalcost:C2}");
+        Console.WriteLine($"The profit is {profit:C2}.");
 
         Console.WriteLine("\nPress any key to return to menu...");
         Console.ReadKey();
